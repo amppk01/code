@@ -1,0 +1,14 @@
+Confirm Requirement
+1. ทำ Lib Correlate ES09  ของ Project WIFI-PCEF
+2. โดยแกะ ค่าของ Acct-Seesion-ID 
+3. ถ้าไม่มีค่า Acct-Seesion-ID ไม่ต้องทำ correlate เป็นค่า default ของระบบ
+4. ถ้าค่า Acct-Seesion-ID เป็นค่าว่าง ไม่ต้องทำ correlate เป็นค่า default ของระบบ
+
+<Acct-Session-Id value="15/0/1/1593_03B2E327" />
+<User-Name value="0898881234@aisfree" />
+<Framed-IP-Address value="172.24.112.182" />
+<User-Password value="password" />
+<Calling-Station-Id value="0022f414591b" />
+<NAS-Port-Type value="Ethernet" />
+<NAS-Port value="4043309659" />
+<NAS-Identifier value="ASR1006_CWDC01.ais.co.th" />
