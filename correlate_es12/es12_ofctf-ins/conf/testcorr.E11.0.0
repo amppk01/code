@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+    <cold>
+        <HomeDirectory value="/opt/equinox" />
+        <sf group="testcorr" service="0" instance="0">
+            <Host host="localhost" port="11000" />
+        </sf>
+        <edb port="20800" size="8589934592" link_file="latest_unload" sensitivity="1000" />
+        <dmp port="20900" dictionary="E11-template.dict" org_host="localhost" org_realm="toro.ais.co.th" ip="127.0.0.1" vendor="AIS" product="equinox" standalone="no" />
+        <diameter host="127.0.0.1" port="20901" dictionary="E11-template.dict" org_host="localhost" org_realm="toro.ais.co.th" ip="127.0.0.1" app="4" vendor="AIS" product="equinox" />
+    </cold>
+    <warm>
+        <SFLOG value="FATAL|ERROR|WARN|INFO" />
+        <!-- SFLOGSplitInterval number of minute value : 5-1440 (1440 = 1 day) **value can modulo to 1440 only exp: 10,20,30,60,120 -->
+        <SFLOGSplitInterval value="1440" />
+        <!-- StatInterval value : 1,2,3,4,5,6,10,12,15,20,30,60 -->
+        <StatInterval value="10" />
+        <!-- StatAlignment for adjust number of second in minute value : 0-59 -->
+        <StatAlignment value="0" />
+        <!-- StatResetInterval number of minute value : 0-1440 (1440 = 1 day) -->
+        <StatResetInterval value="1440" />
+        <HousekeeperInterval value="10" />
+        <RestartDelay value="10" />
+        <MaxRetry value="1" />
+
+        <SFMessageTimeout value="10" />
+        <SFMaxClient value="2" />
+        <SFConnectTimeout value="10" />
+        <SFReadTimeout value="10" />
+        <SFWriteTimeout value="10" />
+        <SFACKTimeout value="20" />
+        <SFWatchdogInterval value="30" />
+        <SFMaxWriteLength value="8372223" />
+        <SFHighMessageCount value="2000" />
+        <SFLowMessageCount value="1000" />
+
+        <DMPMaxSession value="256" />
+        <DMPReadTimeout value="10" />
+        <DMPWriteTimeout value="10" />
+        <DMPEventTimeout value="30" />
+        <DMPMaxWriteLength value="0" />
+        <DMPWatchdogInterval value="30" />
+
+        <DiameterMaxClient value="8" />
+        <DiameterConnectTimeout value="10" />
+        <DiameterWaitTimeout value="30" />
+        <DiameterReadTimeout value="10" />
+        <DiameterWriteTimeout value="10" />
+        <DiameterMaxWriteLength value="0" />
+        <DiameterWatchdogInterval value="30" />
+        <DiameterEventTimeout value="30" />
+        <DiameterAnswerTimeout value="30" />
+    </warm>
+</configuration>
