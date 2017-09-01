@@ -1,0 +1,10 @@
+Confirm Requirement
+ทำCorrelate ของ ES12 Project OCHKF for INS มี 4 คำสั่ง
+ทุก Parameter ที่จะนำมาแกะ Correlate จะต้องคั่นด้วย | (Pipe) เสมอ
+
+Requirement
+1. ทำ lib correlate ES12 สำหรับ product OFCTF [INS Project]
+2. แกะ Correlate ของ data ใน field ที่ 5 |TAP| เสมอ
+3. ในกรณีถ้าไม่มีค่าใน field ที่ 5 ไม่ต้องทำ correlate ให้ใช้เป็นค่า default ของระบบ
+
+message ที่ใช้เทสอยู่ในโฟล์เดอร์  message

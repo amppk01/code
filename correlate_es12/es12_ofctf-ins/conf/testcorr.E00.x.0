@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+    <cold>
+        <HomeDirectory value="/opt/equinox" />
+        <Listener port="11000" backlog="256"/>
+        <sf group="testcorr" service="x" instance="0"/>
+    </cold>
+    <warm>
+        <SFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+        <!-- SFLOGSplitInterval number of minute value : 5-1440 (1440 = 1 day) **value can modulo to 1440 only exp: 10,20,30,60,120 -->
+        <SFLOGSplitInterval value="1440" />
+        <!-- StatInterval value : 1,2,3,4,5,6,10,12,15,20,30,60 -->
+        <StatInterval value="10" />
+        <!-- StatAlignment for adjust number of second in minute value : 0-59 -->
+        <StatAlignment value="0" />
+        <!-- StatResetInterval number of minute value : 0-1440 (1440 = 1 day) -->
+        <StatResetInterval value="1440" />
+        <HousekeeperInterval value="10" />
+        <RestartDelay value="10" />
+        <ReadTimeout value="10" />
+        <WriteTimeout value="10" />
+        <ACKTimeout value="20" />
+        <WatchdogInterval value="30" />
+        <MaxSession value="256" />
+        <MaxWriteLength value="8372223" />
+        <HighMessageCount value="2000" />
+        <LowMessageCount value="1000" />
+        <InitPause value="10" />
+	<MaxRetry value="1" />
+    </warm>
+</configuration>
+
