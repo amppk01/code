@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+    <cold>
+        <HomeDirectory value="/opt/equinox" />
+        <sf group="testcorr" service="0" instance="0">
+            <Host host="localhost" port="11000" />
+        </sf>
+        <http host="localhost" port="12000" uri="/" permanence="yes" keepalive="0" watchdog="0" >
+            <Header name="Pragma" value="no-cache" />
+            <Header name="Accept" value="image/gif, image/x-xbitmap, image/jpeg, image/pjpeg, */*" />
+            <Header name="Content-Type" value="application/x-www-form-urlencoded" />
+        </http>
+    </cold>
+    <warm>
+        <SFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+        <!-- SFLOGSplitInterval number of minute value : 5-1440 (1440 = 1 day) **value can modulo to 1440 only exp: 10,20,30,60,120 -->
+        <SFLOGSplitInterval value="1440" />
+        <!-- StatInterval value : 1,2,3,4,5,6,10,12,15,20,30,60 -->
+        <StatInterval value="10" />
+        <!-- StatAlignment for adjust number of second in minute value : 0-59 -->
+        <StatAlignment value="0" />
+        <!-- StatResetInterval number of minute value : 0-1440 (1440 = 1 day) -->
+        <StatResetInterval value="1440" />
+        <HousekeeperInterval value="10" />
+        <RestartDelay value="10" />
+        <MaxRetry value="1" />
+
+        <!-- type: none, e164, imsi etc. -->
+        <TraceType value="none" />
+        <TraceNumber value="66860500900" />
+
+        <E11ScaleNumber value="1" />
+        <SFMessageTimeout value="10" />
+        <SFOAMTimeout value="120" />
+        <SFMaxClient value="1" />
+        <SFConnectTimeout value="10" />
+        <SFReadTimeout value="10" />
+        <SFWriteTimeout value="10" />
+        <SFACKTimeout value="20" />
+        <SFWatchdogInterval value="30" />
+        <SFMaxWriteLength value="8372223" />
+
+        <HttpMaxClient value="32" />
+        <HttpConnectTimeout value="10" />
+        <HttpWaitTimeout value="20" />
+        <HttpReadTimeout value="10" />
+        <HttpWriteTimeout value="10" />
+        <HttpMaxWriteLength value="8372223" />
+        <HttpMaxReadLength value="8372223" />
+        <HighMessageCount value="2000" />
+        <LowMessageCount value="1000" />
+    </warm>
+</configuration>

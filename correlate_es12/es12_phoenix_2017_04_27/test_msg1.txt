@@ -1,0 +1,1 @@
+${orderType}|0892220000|PHX|9900818120453|01|3B|P13080054|${userName}|${chargeType}|${networkType}|${preparationType}|${regionCode}|${lineNo}|${packageType}|${subPackageType}|${locationId}|${locationName}|${reasonEvent}|${classifyCode}|${categoryCode}|${pattern}|${simaterialCode}
