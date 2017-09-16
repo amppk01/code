@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+    <cold>
+        <HomeDirectory value="/opt/equinox" />
+        <sf group="testcorr" service="serv" instance="0">
+            <Host host="localhost" port="11000" />
+        </sf>
+        <correlation library="extend" name="lib_es12_correlate.so" function="extract_correlate"/>
+        <af_correlation library="default" name="lib_es12_af_correlate.so" function="af_extract_correlate"/>
+    </cold>
+    <warm>
+        <SFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+        <!-- SFLOGSplitInterval number of minute value : 5-1440 (1440 = 1 day) **value can modulo to 1440 only exp: 10,20,30,60,120 -->
+        <SFLOGSplitInterval value="1440" />
+        <!-- StatInterval value : 1,2,3,4,5,6,10,12,15,20,30,60 -->
+        <StatInterval value="10" />
+        <!-- StatAlignment for adjust number of second in minute value : 0-59 -->
+        <StatAlignment value="0" />
+        <!-- StatResetInterval number of minute value : 0-1440 (1440 = 1 day) -->
+        <StatResetInterval value="1440" />
+        <HousekeeperInterval value="10" />
+        <RestartDelay value="1" />
+        <E11ScaleNumber value="1" />
+
+        <SFMessageTimeout value="10" />
+        <SFMaxClient value="1" />
+        <SFConnectTimeout value="10" />
+        <SFReadTimeout value="10" />
+        <SFWriteTimeout value="10" />
+        <SFACKTimeout value="20" />
+        <SFWatchdogInterval value="30" />
+        <SFMaxWriteLength value="8372223" />
+
+        <!-- name or time -->
+        <Sort value="time" />
+        <ReadPath value="/opt/equinox/log/old/" />
+        <WritePath value="/opt/equinox/log/new/" />
+        <!-- WritePathFragment split write file by E11 service scale number value = [no|yes] default = no -->
+        <WritePathFragment value="no" />
+        <!-- TPS val set 1 to 1000 -->
+        <TPS value="1" />
+        <!-- Latency value 1 is 0.1 millisecond -->
+        <Latency value="0" />
+        <!-- ${LF} = line feed -->
+        <ReadDelimiter value="${LF}" />
+        <WriteDelimiter value="${LF}" />
+        <!-- filename fragment -->
+        <Instance value="${filename}:${fragment}" />
+        <!-- file split mode -->
+        <HeaderSize value="0" /> <!-- default = 0 -->
+        <BodySize value="1" /> <!-- default = 1 -->
+        <EOFBlock value="0" /> <!-- default = 0 -->
+        <IgnoreBodyPattern value="" /> <!-- regular expression available -->
+        
+        <!-- FileDetectNotify send notify message to AF before loading file value = [no|yes] default = no -->
+        <FileDetectNotify value="no" />
+        <!-- FileConfirmService ES00 destination service for notify confirmation -->
+        <FileConfirmService value="" />
+        <!-- FileConfirmTimeout time to wait AF notify confirm before delete file -->
+        <FileConfirmTimeout value="10" />
+    </warm>
+</configuration>
+

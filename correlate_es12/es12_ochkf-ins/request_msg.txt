@@ -1,0 +1,14 @@
+Confirm Requirement
+ทำCorrelate ของ ES12 Project OCHKF for INS มี 4 คำสั่ง
+ทุก Parameter ที่จะนำมาแกะ Correlate จะต้องคั่นด้วย | (Pipe) เสมอ
+
+1.NotifyBeforeStateChangeRequest
+  Correlation format [MSISDN|CurrentState|NextState|amfActiveStopTime|amfSuspendStopTime|amfDisableStopTime|amfTerminateStopTime]
+2.StateChangeRequest
+  Correlation format [MSISDN|CurrentState|PreviousState|amfActiveStopTime|amfSuspendStopTime|amfDisableStopTime|amfTerminateStopTime]
+3.DeleteAfterTerminateRequest
+  Correlation format [MSISDN|CurrentState|amfActiveStopTime|amfSuspendStopTime|amfDisableStopTime|amfTerminateStopTime]
+4.DeleteRewardPackageRequest
+  Correlation format [MSISDN|counterId|productOffer|activationDate|expiryTime]
+
+message ที่ใช้เทสอยู่ในโฟล์เดอร์  message

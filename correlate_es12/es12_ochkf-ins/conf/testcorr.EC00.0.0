@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="tis-620" ?>
+<configuration>
+   <cold>
+      <HomeDirectory value="/opt/equinox" />
+      <httpd ip="127.0.0.1" port="12000" backlog="256" />
+      <sf group="testcorr" service="0" instance="0" />
+      <AFLibrary name="libaf.so" function="af_action_process" cold="af_config_verify" warm="af_config_reload" />
+   </cold>
+   <warm>
+      <SFLOG value="FATAL|ERROR|WARN|INFO|DEBUG" />
+	  <!-- SFLOGSplitInterval number of minute value : 5-1440 (1440 = 1 day) **value can modulo to 1440 only exp: 10,20,30,60,120 -->
+	  <SFLOGSplitInterval value="1440" />
+	  <!-- StatInterval value : 1,2,3,4,5,6,10,12,15,20,30,60 -->
+      <StatInterval value="10" />
+      <!-- StatAlignment for adjust number of second in minute value : 0-59 -->
+      <StatAlignment value="0" />
+      <!-- StatResetInterval number of minute value : 0-1440 (1440 = 1 day) -->
+      <StatResetInterval value="1440" />
+      <HousekeeperInterval value="10" />
+      <RestartDelay value="10" />
+      <HttpMaxSession value="200" />
+      <HttpReadTimeout value="30" />
+      <HttpWriteTimeout value="30" />
+      <HttpMessageTimeout value="30" />
+      <HttpIdleTimeout value="30" />
+      <HttpMaxWriteLength value="0" />
+      <!-- E01BackwardCompatibility value : yes,no (default : no) -->
+      <E01BackwardCompatibility value="no" />
+   </warm>
+</configuration>
